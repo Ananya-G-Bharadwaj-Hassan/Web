@@ -116,7 +116,7 @@ function showSection(section) {
     <div class="cert-grid">
       <img src="soc.jpg" onclick="openCert(this.src)">
       <img src="nptel.jpg" onclick="openCert(this.src)">
-      <img src="ibm.jpg" onclick="openCert(this.src)">
+      <img src="ibm.png" onclick="openCert(this.src)">
     </div>
 
     <div id="cert-popup" class="cert-popup" onclick="closeCert()">
