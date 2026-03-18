@@ -7,14 +7,14 @@ function showSection(section) {
     <h2>About Me</h2>
     <p class="about-intro">
       I am a passionate Computer Science Engineering student with a strong interest in 
-      <b>Artificial Intelligence, Web Development and Problem-Solving</b>. I enjoy creating 
+      <b>Artificial Intelligence, Data Science, Machine Learning and Software Development</b>. I enjoy creating 
       practical projects and exploring new technologies that can improve real-world systems.
     </p></br></br>
 
     <ul class="about-list">
       <li>🎯 Quick learner with the ability to understand and apply technical concepts effectively.</li>
       <li>🤝 Strong teamwork, communication and analytical thinking skills.</li>
-      <li>💻 Aiming to build a career as an <b>AI Engineer / Software Developer</b> while continuously improving my coding and development skills.</li>
+      <li>💻 Aiming to build a career as an <b>AI/ML Engineer / Data Scientist</b> while continuously improving my coding and development skills.</li>
     </ul>
   `;
 }
@@ -114,17 +114,43 @@ function showSection(section) {
     <h2>My Certifications</h2>
 
     <div class="cert-grid">
-      <img src="soc.jpg" onclick="openCert(this.src)">
-      <img src="nptel.jpg" onclick="openCert(this.src)">
-      <img src="ibm.png" onclick="openCert(this.src)">
-    </div>
 
-    <div id="cert-popup" class="cert-popup" onclick="closeCert()">
-      <img id="cert-img">
+      <div class="cert-card" onclick="this.classList.toggle('flip')">
+        <div class="cert-inner">
+          <div class="cert-front">
+            <h3>Social Networks-NPTEL</h3>
+          </div>
+          <div class="cert-back">
+            <img src="soc.jpg">
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" onclick="this.classList.toggle('flip')">
+        <div class="cert-inner">
+          <div class="cert-front">
+            <h3>Getting started with Artificial Intelligence-IBM</h3>
+          </div>
+          <div class="cert-back">
+            <img src="ibm.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card" onclick="this.classList.toggle('flip')">
+        <div class="cert-inner">
+          <div class="cert-front">
+            <h3>Data Warehouse Essential Concepts-Infosys springboard</h3>
+          </div>
+          <div class="cert-back">
+            <img src="nptel.jpg">
+          </div>
+        </div>
+      </div>
+
     </div>
   `;
 }
-
 function openCert(src) {
   document.getElementById("cert-img").src = src;
   document.getElementById("cert-popup").style.display = "flex";
@@ -137,6 +163,7 @@ function closeCert() {
   if (section === "contact") {
   html = `
     <h2>Contact Me</h2>
+
     <div class="contact-item">
       <i class="fa-solid fa-envelope"></i>
       <span>Email:</span>
@@ -162,10 +189,29 @@ function closeCert() {
       <span>Location:</span>
       <p>Hassan, Karnataka</p>
     </div>
+
+    <br><br>
+
+    <h3>Send Me a Message</h3>
+
+    <form class="contact-form" action="https://formsubmit.co/ananyagbharadwaj@gmail.com" method="POST">
+      
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
   `;
 }
-
   content.innerHTML = html;
+
+  // scroll automatically to the content section
+content.scrollIntoView({ behavior: "smooth" });
+
 
   // animation refresh
   AOS.init();
